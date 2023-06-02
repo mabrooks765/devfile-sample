@@ -1,3 +1,4 @@
+FROM image-registry.openshift-image-registry.svc:5000/openshift/nodejs:16-ubi8
 # set proxy environment variables if needed
 env HTTP_PROXY=http://foo:bar@proxy.gtm.lilly.com:9000
 env HTTPS_PROXY=http://foo:bar@proxy.gtm.lilly.com:9000
