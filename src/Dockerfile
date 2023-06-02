@@ -1,8 +1,4 @@
 FROM image-registry.openshift-image-registry.svc:5000/openshift/nodejs:16-ubi8
-# set proxy environment variables if needed
-env HTTP_PROXY=http://foo:bar@proxy.gtm.lilly.com:9000
-env HTTPS_PROXY=http://foo:bar@proxy.gtm.lilly.com:9000
-env NO_PROXY='.am.lilly.com'
 
 ENV ORACLE_CLIENT_BASIC_URL https://download.oracle.com/otn_software/linux/instantclient/195000/oracle-instantclient19.5-basic-19.5.0.0.0-1.x86_64.rpm
 ENV ORACLE_CLIENT_BASIC_RPM oracle-instantclient-basic.x86_64.rpm
