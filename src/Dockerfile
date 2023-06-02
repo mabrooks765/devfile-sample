@@ -18,7 +18,7 @@ RUN    curl --silent -o /tmp/${ORACLE_CLIENT_BASIC_RPM} ${ORACLE_CLIENT_BASIC_UR
     && ldconfig
 
 # Add app source to tmp for assemble script
-ADD app-src /tmp/src
+ADD . /tmp/src
 
 RUN chown -R 1001:0 /tmp/src
 
