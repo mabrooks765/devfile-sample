@@ -4,9 +4,6 @@ ENV ORACLE_CLIENT_BASIC_URL https://download.oracle.com/otn_software/linux/insta
 ENV ORACLE_CLIENT_BASIC_RPM oracle-instantclient-basic.x86_64.rpm
 ENV ORACLE_CLIENT_LIB /usr/lib/oracle/19.5
 
-ENV APP_SRC app
-ENV APP_DEST /tmp/src/
-
 # Set user to root to install RPMs and app source
 USER root
 
@@ -21,7 +18,7 @@ RUN    curl --silent -o /tmp/${ORACLE_CLIENT_BASIC_RPM} ${ORACLE_CLIENT_BASIC_UR
     && ldconfig
 
 # Add app source to tmp for assemble script
-ADD $APP_SRC $APP_DEST
+ADD app-src /tmp/src
 
 RUN chown -R 1001:0 /tmp/src
 
