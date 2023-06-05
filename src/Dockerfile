@@ -1,4 +1,4 @@
-FROM image-registry.openshift-image-registry.svc:5000/openshift/nodejs:16-ubi8
+FROM registry.hub.docker.com/library/node:16
 
 ENV ORACLE_CLIENT_BASIC_URL https://download.oracle.com/otn_software/linux/instantclient/1919000/oracle-instantclient19.19-basic-19.19.0.0.0-1.x86_64.rpm
 ENV ORACLE_CLIENT_BASIC_RPM oracle-instantclient-basic.x86_64.rpm
