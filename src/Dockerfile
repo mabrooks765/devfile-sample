@@ -11,15 +11,10 @@ USER root
 RUN curl --silent -o /tmp/${ORACLE_CLIENT_BASIC_RPM} ${ORACLE_CLIENT_BASIC_URL} \
     && ls -al /tmp/ \
     && cd /tmp \
-    && yum --nogpgcheck localinstall -y /tmp/$ORACLE_CLIENT_BASIC_RPM \
-    && yum --enablerepo=\* clean all \
+    && apk add --allow-untrusted $ORACLE_CLIENT_BASIC_RPM \
     && /bin/rm /tmp/oracle* \
     && echo "${ORACLE_CLIENT_LIB}/client64/lib/" > /etc/ld.so.conf.d/oracle.conf \
     && ldconfig
-	
-# Create symlink for old glibc library
-RUN cd /usr/lib64 \
-    && ln -s libnsl.so.2.0.0 libnsl.so.1
 
 # Add app source to tmp for assemble script
 ADD . /tmp/src
