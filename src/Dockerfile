@@ -11,7 +11,7 @@ USER root
 RUN curl --silent -o /tmp/${ORACLE_CLIENT_BASIC_RPM} ${ORACLE_CLIENT_BASIC_URL} \
     && ls -al /tmp/ \
     && cd /tmp \
-    && yum --nogpgcheck localinstall -y --skip-broken /tmp/$ORACLE_CLIENT_BASIC_RPM \
+    && yum --nogpgcheck localinstall -y /tmp/$ORACLE_CLIENT_BASIC_RPM \
     && yum --enablerepo=\* clean all \
     && /bin/rm /tmp/oracle* \
     && echo "${ORACLE_CLIENT_LIB}/client64/lib/" > /etc/ld.so.conf.d/oracle.conf \
