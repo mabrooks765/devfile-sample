@@ -1,8 +1,8 @@
 FROM image-registry.openshift-image-registry.svc:5000/openshift/nodejs:16-ubi8
 
-ENV ORACLE_CLIENT_BASIC_URL https://download.oracle.com/otn_software/linux/instantclient/195000/oracle-instantclient19.5-basic-19.5.0.0.0-1.x86_64.rpm
+ENV ORACLE_CLIENT_BASIC_URL https://download.oracle.com/otn_software/linux/instantclient/1919000/oracle-instantclient19.19-basic-19.19.0.0.0-1.x86_64.rpm
 ENV ORACLE_CLIENT_BASIC_RPM oracle-instantclient-basic.x86_64.rpm
-ENV ORACLE_CLIENT_LIB /usr/lib/oracle/19.5
+ENV ORACLE_CLIENT_LIB /usr/lib/oracle/19.19
 
 # Set user to root to install RPMs and app source
 USER root
